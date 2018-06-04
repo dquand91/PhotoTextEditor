@@ -69,7 +69,7 @@ public class PhotoEditor {
 		final View imageRootView = getLayout(ViewType.IMAGE);
 		final ImageView imageView = imageRootView.findViewById(R.id.imgPhotoEditorImage);
 		final FrameLayout frmBorder = imageRootView.findViewById(R.id.frmBorder);
-		final ImageView imgClose = imageRootView.findViewById(R.id.imgPhotoEditorClose);
+//		final ImageView imgClose = imageRootView.findViewById(R.id.imgPhotoEditorClose);
 
 		imageView.setImageBitmap(desiredImage);
 
@@ -79,7 +79,7 @@ public class PhotoEditor {
 			public void onClick() {
 				boolean isBackgroundVisible = frmBorder.getTag() != null && (boolean) frmBorder.getTag();
 				frmBorder.setBackgroundResource(isBackgroundVisible ? 0 : R.drawable.rounded_border_tv);
-				imgClose.setVisibility(isBackgroundVisible ? View.GONE : View.VISIBLE);
+//				imgClose.setVisibility(isBackgroundVisible ? View.GONE : View.VISIBLE);
 				frmBorder.setTag(!isBackgroundVisible);
 			}
 
@@ -125,7 +125,7 @@ public class PhotoEditor {
 //		brushDrawingView.setBrushDrawingMode(false);
 		final View textRootView = getLayout(ViewType.TEXT);
 		final TextView textInputTv = textRootView.findViewById(R.id.tvPhotoEditorText);
-		final ImageView imgClose = textRootView.findViewById(R.id.imgPhotoEditorClose);
+//		final ImageView imgClose = textRootView.findViewById(R.id.imgPhotoEditorClose);
 		final FrameLayout frmBorder = textRootView.findViewById(R.id.frmBorder);
 
 		textInputTv.setText(text);
@@ -139,7 +139,7 @@ public class PhotoEditor {
 			public void onClick() {
 				boolean isBackgroundVisible = frmBorder.getTag() != null && (boolean) frmBorder.getTag();
 				frmBorder.setBackgroundResource(isBackgroundVisible ? 0 : R.drawable.rounded_border_tv);
-				imgClose.setVisibility(isBackgroundVisible ? View.GONE : View.VISIBLE);
+//				imgClose.setVisibility(isBackgroundVisible ? View.GONE : View.VISIBLE);
 				frmBorder.setTag(!isBackgroundVisible);
 			}
 
@@ -154,7 +154,6 @@ public class PhotoEditor {
 
 			@Override
 			public void onDoubleClick() {
-				Log.d(TAG, "onDoubleClick: QUAN123");
 
 			}
 		});
@@ -366,18 +365,18 @@ public class PhotoEditor {
 //				break;
 		}
 
-		if (rootView != null) {
-			final ImageView imgClose = rootView.findViewById(R.id.imgPhotoEditorClose);
-			final View finalRootView = rootView;
-			if (imgClose != null) {
-				imgClose.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						viewUndo(finalRootView);
-					}
-				});
-			}
-		}
+//		if (rootView != null) {
+//			final ImageView imgClose = rootView.findViewById(R.id.imgPhotoEditorClose);
+//			final View finalRootView = rootView;
+//			if (imgClose != null) {
+//				imgClose.setOnClickListener(new View.OnClickListener() {
+//					@Override
+//					public void onClick(View v) {
+//						viewUndo(finalRootView);
+//					}
+//				});
+//			}
+//		}
 		return rootView;
 	}
 
@@ -593,10 +592,10 @@ public class PhotoEditor {
 			if (frmBorder != null) {
 				frmBorder.setBackgroundResource(0);
 			}
-			ImageView imgClose = childAt.findViewById(R.id.imgPhotoEditorClose);
-			if (imgClose != null) {
-				imgClose.setVisibility(View.GONE);
-			}
+//			ImageView imgClose = childAt.findViewById(R.id.imgPhotoEditorClose);
+//			if (imgClose != null) {
+//				imgClose.setVisibility(View.GONE);
+//			}
 		}
 	}
 

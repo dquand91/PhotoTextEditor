@@ -78,14 +78,6 @@ public class ZoomLayout extends RelativeLayout {
             View child = getChildAt(i);
             if (child.getVisibility() != GONE)
             {
-                Log.d("QUAN123", "=============== ");
-                Log.d("QUAN123", "left + child.getMeasuredWidth(): " + (left + child.getMeasuredWidth()));
-                Log.d("QUAN123", "top + child.getMeasuredHeight(): " + (top + child.getMeasuredHeight()));
-                Log.d("QUAN123", "left: " + (left));
-                Log.d("QUAN123", "top: " + (top));
-                Log.d("QUAN123", "right: " + (right));
-                Log.d("QUAN123", "bottom: " + (bottom));
-                Log.d("QUAN123", "====================");
                 child.layout(left, 0, left + child.getMeasuredWidth(), top + child.getMeasuredHeight());
 
             }

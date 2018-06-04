@@ -8,7 +8,6 @@ import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -54,7 +53,6 @@ public class PhotoEditorView extends RelativeLayout {
 			TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.PhotoEditorView);
 			Drawable imgSrcDrawable = a.getDrawable(R.styleable.PhotoEditorView_photo_src);
 			if (imgSrcDrawable != null) {
-				Log.d("QUAN123", "setImageDrawable ");
 				mImgSource.setImageDrawable(imgSrcDrawable);
 			}
 		}
