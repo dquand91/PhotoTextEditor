@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.baitap.quan.photoeditor.CustomImageView.OnSingleTapListener;
 import com.baitap.quan.photoeditor.CustomImageView.ZoomageView;
@@ -62,13 +61,10 @@ public class MainActivity extends AppCompatActivity {
         btnText_bottomBar.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(MainActivity.this, "BBBB", Toast.LENGTH_SHORT).show();
+//				Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
                 FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 EdittextFragment hello = new EdittextFragment();
-                fragmentTransaction.add(R.id.container_main_screen, hello, "HELLO");
-                fragmentTransaction.addToBackStack("HELLO");
-                fragmentTransaction.commit();
+                addFragmentOnlyOnce(fragmentManager, hello, "HELLO");
 			}
 		});
 
@@ -77,12 +73,27 @@ public class MainActivity extends AppCompatActivity {
         btnSave.setEnabled(false);
     }
 
+	public static void addFragmentOnlyOnce(FragmentManager fragmentManager, EdittextFragment fragment, String tag) {
+        // Make sure the current transaction finishes first
+        fragmentManager.executePendingTransactions();
+
+        // If there is no fragment yet with this tag...
+        if (fragmentManager.findFragmentByTag(tag) == null) {
+            // Add it
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            transaction.add(R.id.container_main_screen, fragment, "HELLO");
+            transaction.addToBackStack("HELLO");
+            transaction.commit();
+        }
+    }
+
     @Override
     public void onBackPressed() {
         if (getFragmentManager().getBackStackEntryCount() == 0) {
             this.finish();
         } else {
             getFragmentManager().popBackStack();
+            EdittextFragment.hideKeyboard(MainActivity.this);
         }
     }
 }

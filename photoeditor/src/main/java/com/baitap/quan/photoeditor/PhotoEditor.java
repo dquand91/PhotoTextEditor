@@ -41,7 +41,16 @@ public class PhotoEditor {
 	private OnPhotoEditorListener mOnPhotoEditorListener;
 	private boolean isTextPinchZoomable;
 	private Typeface mDefaultTextTypeface;
-//	private Typeface mDefaultEmojiTypeface;
+	//	private Typeface mDefaultEmojiTypeface;
+	private CustomEditext textInputTv;
+
+	public CustomEditext getTextInputTv() {
+		return textInputTv;
+	}
+
+	public void setTextInputTv(CustomEditext textInputTv) {
+		this.textInputTv = textInputTv;
+	}
 
 
 	private PhotoEditor(Builder builder) {
@@ -124,7 +133,7 @@ public class PhotoEditor {
 	public void addText(@Nullable Typeface textTypeface, String text, final int colorCodeTextView) {
 //		brushDrawingView.setBrushDrawingMode(false);
 		final View textRootView = getLayout(ViewType.TEXT);
-		final TextView textInputTv = textRootView.findViewById(R.id.tvPhotoEditorText);
+		textInputTv = textRootView.findViewById(R.id.tvPhotoEditorText);
 //		final ImageView imgClose = textRootView.findViewById(R.id.imgPhotoEditorClose);
 		final FrameLayout frmBorder = textRootView.findViewById(R.id.frmBorder);
 
