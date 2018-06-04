@@ -12,9 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="Cancel"
-        android:textColor="#FFFFFF"
         android:layout_alignParentStart="true"
-        />
+        android:textColor="@drawable/button_text_color"/>
 
     <TextView
         android:id="@+id/btnSave_ActionBar"
@@ -22,10 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="Save"
-        android:textColor="#FFFFFF"
         android:layout_alignParentEnd="true"
-
-        />
+        android:textColor="@drawable/button_text_color"/>
 
 
 

@@ -22,8 +22,26 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.baitap.quan.photoeditor.ZoomLayout
-        android:id="@+id/zoomRelativeLayout"
+    <!--<com.baitap.quan.photoeditor.ZoomLayout-->
+        <!--android:id="@+id/zoomRelativeLayout"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/constraintTools"-->
+        <!--app:layout_constraintHorizontal_bias="0.0"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/actionBar_main"-->
+        <!--app:layout_constraintVertical_bias="1.0">-->
+
+            <!--<com.baitap.quan.photoeditor.PhotoEditorView-->
+                <!--android:id="@+id/photoEditorView"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:photo_src="@drawable/img_src" />-->
+    <!--</com.baitap.quan.photoeditor.ZoomLayout>   -->
+
+    <com.baitap.quan.photoeditor.PhotoEditorView
+        android:id="@+id/photoEditorView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintTools"
@@ -31,14 +49,11 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/actionBar_main"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="1.0"
+        app:photo_src="@drawable/img_src" />
 
-            <com.baitap.quan.photoeditor.PhotoEditorView
-                android:id="@+id/photoEditorView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:photo_src="@drawable/img_src" />
-    </com.baitap.quan.photoeditor.ZoomLayout>
+
+
 
     <include
         android:id="@+id/constraintTools"
